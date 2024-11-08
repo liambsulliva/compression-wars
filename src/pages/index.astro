@@ -125,9 +125,12 @@ import JPEGXL from "/images/jpeg-xl.jxl?url&skip";
       </p>
       <p>
         But these formats have historically suffered from a lack of support in a
-        variety of apps. It's a common complaint that you can't open a HEIC
-        image in a program like Photoshop, for example. Ultimately, JPEGs
-        cultural dominance is exactly what makes it so hard to replace.
+        variety of apps. HEIC is very expensive to license, so Apple is really
+        the only company that can reasonably support it. Additionally, while
+        WebP support is growing in browsers, it is less useful as a generalized
+        file format since it won't open natively in Windows and MacOS.
+        Ultimately, JPEGs cultural dominance is exactly what makes it so
+        irreplaceable.
       </p>
       <p>
         JPEG XL is the first new format to challenge JPEG's dominance in
@@ -139,7 +142,21 @@ import JPEGXL from "/images/jpeg-xl.jxl?url&skip";
         JPEG XL can do a lot. It can re-encode existing JPEG images, reducing
         their file size without re-introducing artifacts. As such, it is the
         only new file format that remains backwards compatible with the
-        preexisting JPEG format. Pretty cool!
+        preexisting JPEG format. And it's completely royalty-free despite these
+        fancy re-encoding schemes. Pretty cool!
+      </p>
+      <p>
+        It also supports native <a
+          href="https://learn.microsoft.com/en-us/windows/win32/wic/-wic-progressive-decoding"
+          target="_blank"
+          rel="noreferrer">Progressive Decoding</a
+        >, which allows for the image to be displayed before it is fully
+        decoded. Traditionally, images are loaded in from top-to-bottom,
+        rendering the rows of pixels one at a time. With progressive decoding,
+        images will load at a set of "tiers", each being a progressively more
+        detailed version of the image. Additionally, machine learning is used to
+        prioritize important elements of a given image, like faces or areas that
+        are in sharp focus relative to the rest of the image.
       </p>
       <p>
         Additionally, it's just better at compression in general. While WebP can
@@ -169,7 +186,37 @@ import JPEGXL from "/images/jpeg-xl.jxl?url&skip";
       <p>
         Google has been vocal about its support for its new standard, AVIF. It
         is the image component of their new video codec that they are devising
-        to improve compression ratios on YouTube, AV1.
+        to improve compression ratios on YouTube, AV1. As such, Google has a
+        vested interest in AVIF's success.
+      </p>
+      <p>
+        And AVIF is not bad by any means. It's a great format. It can support
+        4096 shades of colors per color channel, 65536 x 65536 images, is
+        royalty-free, can handle transparency, and has a host of other features
+        that make it a great option. However, JPEG XL is just more future-proof.
+        It can support 4 billion shades of each color, and can support pixel
+        dimensions up to a billion pixels of width and height. If AVIF is a gun,
+        JPEG XL is a rocket launcher.
+      </p>
+      <p>
+        So Google's technological politics serve as a bulwark to JPEG XL's
+        success. They dropped support for JPEG XL in Chrome back in 2023, due to
+        "security implications", and Mozilla (a company funded by Google)
+        chooses to remain "neutral" on the issue by only enabling it in its
+        nightly builds.
+      </p>
+      <p>
+        The only browser that supports JPEG XL is Safari. And while it's great
+        that Apple is supporting the format, Safari doesn't have the market
+        share for web developers to justify using it, especially when
+        Google-sponsored formats like WebP and AVIF seem to do the job well
+        enough.
+      </p>
+      <p>
+        It's quite a shame. JPEG XL is a great format that has the potential to
+        completely dethrone JPEG as the universal image format. But until Google
+        and Mozilla change their tune, JPEG XL will remain a niche format,
+        relegated to living in the shadow of AVIF.
       </p>
     </section>
     <Footer />

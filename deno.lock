@@ -61,9 +61,11 @@
         "npm:@astrojs/check@~0.9.4",
         "npm:@astrojs/deno@^5.0.1",
         "npm:@astrojs/tailwind@^5.1.2",
+        "npm:@fontsource/montserrat@^5.1.0",
         "npm:astro@^4.16.8",
         "npm:tailwindcss@^3.4.14",
-        "npm:typescript@^5.6.3"
+        "npm:typescript@^5.6.3",
+        "npm:vite-imagetools@^7.0.4"
       ]
     }
   }
