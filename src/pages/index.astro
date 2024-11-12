@@ -3,222 +3,305 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import { Image } from "astro:assets";
 import JPEGXL from "/images/jpeg-xl.jxl?url&skip";
+import MP3 from "./public/images/mp3.png";
+import title from "./public/images/title.png";
+import progressive from "./public/images/progressive.png";
+import caniusejxl from "./public/images/caniuse-jxl.png";
 ---
 
 <Layout title="Compression Wars">
-  <main
-    class="mx-auto p-8 w-[1000px] max-w-[calc(100%-2rem)] text-white text-xl leading-relaxed"
-  >
-    <div class="bg-black w-fit rounded-xl -rotate-3">
-      <h1 class="py-2 text-6xl leading-none text-left m-8">JPEG XL</h1>
-    </div>
-
-    <h2
-      class="text-2xl leading-none text-left mt-6 mb-12 mx-12 decoration-[2px] decoration-black decoration-wavy underline underline-offset-8"
+  <main class="mx-auto px-8 text-white text-xl leading-relaxed">
+    <section
+      class="border-b-4 bg-amber-600 border-black w-screen -mx-8 px-8 py-12"
     >
-      The Forgotten King
-    </h2>
+      <div class="max-w-[1200px] mx-auto">
+        <Image src={title} alt={""} width={400} />
+        <div
+          class="relative bg-white border-4 border-black text-black w-fit rounded-xl ml-10 mt-6 mb-10 before:content-[''] before:absolute before:border-[16px] before:border-transparent before:border-b-black before:-top-[32px] before:left-8 after:content-[''] after:absolute after:border-[12px] after:border-transparent after:border-b-white after:-top-[24px] after:left-[36px]"
+        >
+          <h2 class="text-2xl leading-none text-left m-4">
+            A Forgotten King...
+          </h2>
+        </div>
 
-    <section class="my-8">
-      <p>
-        If you have used technology in the last 30 years, you have used a JPEG
-        (Joint Photographic Experts Group) image before. It's the standard that
-        the majority of the web uses for its images, mainly due to its decent
-        enough compression and wide support among web browsers.
-      </p>
-      <p>
-        <a></a>JPEG came out in 1992, and a lot has changed since then. The web
-        has gotten a lot bigger and more complicated. Websites like Google,
-        Instagram, and YouTube have so much complexity under the hood that the
-        amount of code shipped to the user's browser is getting larger and
-        larger by the day. So why hasn't JPEG found its successor yet?
-      </p>
-      <p>It has! It's called JPEG XL. Check it out below:</p>
-      <div
-        class="my-8 max-w-[800px] mx-auto bg-white border-black border-4 text-black rounded-xl p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
-      >
-        <Image
-          class="rounded"
-          src={JPEGXL}
-          alt={""}
-          width={1600}
-          height={1400}
-        />
+        <p>
+          If you have used technology in the last 30 years, you have used a JPEG
+          (Joint Photographic Experts Group) image before. It's the standard
+          that the majority of the web uses for its images, mainly due to its
+          decent enough compression and wide support among web browsers.
+        </p>
+        <p>
+          JPEG came out in 1992,<a
+            href="https://www.heise.de/news/JPEG-25-Jahre-und-kein-bisschen-alt-3342519.html"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[8]</sup></a
+          > and a lot has changed since then. The web has gotten a lot bigger and
+          more complicated. Websites like Google, Instagram, and YouTube have so
+          much complexity under the hood that the amount of code shipped to the user's
+          browser is getting larger and larger by the day. So why hasn't JPEG found
+          its successor yet?
+        </p>
+        <p>It has! It's called JPEG XL. Check it out below:</p>
+        <div class="flex items-center gap-4 my-8">
+          <div
+            class="max-md:hidden border-black border-2 flex-1 h-6 mx-12 rounded-xl bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          >
+          </div>
+          <div
+            class="max-md:mx-auto max-w-[400px] bg-white border-black border-4 text-black rounded-xl p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+          >
+            <Image
+              class="rounded"
+              src={JPEGXL}
+              alt={""}
+              width={400}
+              height={350}
+            />
+          </div>
+          <div
+            class="max-md:hidden border-black border-2 flex-1 h-6 mx-12 rounded-xl bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          >
+          </div>
+        </div>
+        <p>
+          If I had to guess, you probably don't see anything. Unless you're on
+          Safari, all you'll see is a black border. So why is this?
+        </p>
       </div>
-      <p>
-        If I had to guess, you probably don't see anything. Unless you're on
-        <a href="https://www.apple.com/safari/" rel="noreferrer" target="_blank"
-          >Safari</a
-        >, all you'll see is a black border. So why is this?
-      </p>
     </section>
 
-    <section class="my-8">
-      <h3>Some Background...</h3>
-      <p>
-        Before we dive into explaining JPEG XL, we need to understand JPEG
-        itself.
-      </p>
-      <p>
-        JPEG is a lossy compression algorithm. This means that when you save a
-        JPEG, some of the data is lost on purpose. This is why you can't
-        uncompress a JPEG and get back the original image.
-      </p>
-      <p>
-        This is done because it allows for greater compression than lossless
-        formats, like PNG.
-      </p>
-      <p>
-        When you're viewing photos on the web, you want to speed up loading
-        times. The smaller the image files being served to the user, the quicker
-        your website will load. Oftentimes, it's better to sacrifice a bit of
-        quality to decrease the load on bandwidth.
-      </p>
-      <p>
-        It's done intelligently though. As Sterne notes in <i
-          >The MP3 as Cultural Artifact</i
-        >, "[MP3s are] a machine designed to anticipate how its listeners
-        perceive music and to perceive for them." Essentially, MP3s compress
-        audio by attuning its data to the characteristics of the human ear. They
-        reduce the sound to only include frequencies that can be reasonably
-        interpreted by the human ear.
-      </p>
-      <p>
-        In the same way that MP3s prune out frequencies indetectable by humans,
-        JPEGs try to remove unnecessary gradients in images. Our brains are
-        notoriously bad at viewing dark colors, and JPEG exploits this by
-        mashing dark shades together in a process called <a
-          href="https://en.wikipedia.org/wiki/Quantization_(signal_processing)"
-          target="_blank"
-          rel="noreferrer">quantization</a
-        >.
-      </p>
-      <p>
-        JPEGs also discards high frequency information. Subtle changes in
-        texture, like the stitching of fabric or the chips made in wood, can be
-        intelligently blurred to give the illusion of keeping their fidelity,
-        even when much of that information is lost.
-      </p>
+    <section
+      class="border-b-4 border-black bg-green-800 w-screen -mx-8 px-8 py-12"
+    >
+      <div class="max-w-[1200px] mx-auto">
+        <div
+          class="relative bg-black w-full -rotate-1 mt-4 py-2 px-8 before:absolute before:content-[''] before:w-[8px] before:h-full before:-left-[4px] before:top-0 before:bg-[linear-gradient(45deg,transparent_25%,black_25%,black_75%,transparent_75%)] before:bg-[length:8px_8px] after:absolute after:content-[''] after:w-[8px] after:h-full after:-right-[4px] after:top-0 after:bg-[linear-gradient(-45deg,transparent_25%,black_25%,black_75%,transparent_75%)] after:bg-[length:8px_8px]"
+        >
+          <h3 class="text-white">Some Background...</h3>
+        </div>
+        <p class="mt-10">
+          Before we dive into explaining JPEG XL, we need to understand JPEG
+          itself.
+        </p>
+        <p>
+          JPEG is a lossy compression algorithm.<a
+            href="https://www.w3.org/Graphics/JPEG/itu-t81.pdf"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[7]</sup></a
+          > This means that when you save a JPEG, some of the data is lost on purpose.
+          This is why you can't uncompress a JPEG and get back the original image.
+        </p>
+        <p>
+          This is done because it allows for greater compression than lossless
+          formats, like PNG.<a
+            href="https://surferhelp.goldensoftware.com/subsys/subsys_portable_network_graphic_file_description.htm"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[10]</sup></a
+          >
+        </p>
+        <p>
+          When you're viewing photos on the web, you want to speed up loading
+          times. The smaller the image files being served to the user, the
+          quicker your website will load. Oftentimes, it's better to sacrifice a
+          bit of quality to decrease the load on bandwidth.
+        </p>
+        <div class="relative md:float-right md:w-3/8 md:ml-4 mb-4">
+          <Image class="max-md:mx-auto" src={MP3} alt={""} width={500} />
+        </div>
+        <p>
+          It's done intelligently though. For a point of reference, MP3s
+          compress audio by attuning its data to the characteristics of the
+          human ear. They reduce the sound to only include frequencies that can
+          be reasonably interpreted by the human ear.<a
+            href="https://www.theverge.com/2015/2/19/8068923/mp3-compression-ghost-suzanne-vega-toms-diner"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[4]</sup></a
+          >
+        </p>
+        <p>
+          In the same way that MP3s prune out frequencies indetectable by
+          humans, JPEGs try to remove unnecessary gradients in images. Our
+          brains are notoriously bad at viewing dark colors, and JPEG exploits
+          this by mashing dark shades together in a process called quantization<a
+            href="https://web.archive.org/web/20111115004238/http://www.john-wiseman.com/technical/MPEG_tutorial.htm"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[11]</sup></a
+          >.
+        </p>
+        <p>
+          JPEGs also discard high frequency information. Subtle changes in
+          texture, like the stitching of fabric or the chips made in wood, can
+          be intelligently blurred to give the illusion of keeping their
+          fidelity, even when much of that information is lost.
+        </p>
+      </div>
     </section>
 
     <!-- TODO: Talk about cultural artifacts of JPEG, similar to Sterne's discussion of MP3 -->
 
-    <section>
-      <h3>Crafting a Better JPEG</h3>
-      <p>
-        As you would imagine, many algorithms have come out that have threatened
-        to dethrone JPEGs dominance in the internet zeitgeist.
-      </p>
-      <p>
-        Pioneered by Apple, the <a
-          href="https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format"
-          target="_blank"
-          rel="noreferrer">HEIC</a
-        > format is one of the most popular alternatives, in large part due to the
-        market share they have nabbed with the <a
-          href="https://www.apple.com/iphone/"
-          target="_blank"
-          rel="noreferrer">iPhone</a
-        >. WebP is another standard that has arisen, supported by Google. It has
-        seen widespread adoption since 2020, and is a great option for
-        developers who want to keep their web applications trim and efficient.
-      </p>
-      <p>
-        But these formats have historically suffered from a lack of support in a
-        variety of apps. HEIC is very expensive to license, so Apple is really
-        the only company that can reasonably support it. Additionally, while
-        WebP support is growing in browsers, it is less useful as a generalized
-        file format since it won't open natively in Windows and MacOS.
-        Ultimately, JPEGs cultural dominance is exactly what makes it so
-        irreplaceable.
-      </p>
-      <p>
-        JPEG XL is the first new format to challenge JPEG's dominance in
-        decades. While JPEG has seen incremental updates in JPEG 2000 and JPEG
-        XR, JPEG XL is the first new format to pose a legitimate challenge to
-        JPEG's dominance in decades.
-      </p>
-      <p>
-        JPEG XL can do a lot. It can re-encode existing JPEG images, reducing
-        their file size without re-introducing artifacts. As such, it is the
-        only new file format that remains backwards compatible with the
-        preexisting JPEG format. And it's completely royalty-free despite these
-        fancy re-encoding schemes. Pretty cool!
-      </p>
-      <p>
-        It also supports native <a
-          href="https://learn.microsoft.com/en-us/windows/win32/wic/-wic-progressive-decoding"
-          target="_blank"
-          rel="noreferrer">Progressive Decoding</a
-        >, which allows for the image to be displayed before it is fully
-        decoded. Traditionally, images are loaded in from top-to-bottom,
-        rendering the rows of pixels one at a time. With progressive decoding,
-        images will load at a set of "tiers", each being a progressively more
-        detailed version of the image. Additionally, machine learning is used to
-        prioritize important elements of a given image, like faces or areas that
-        are in sharp focus relative to the rest of the image.
-      </p>
-      <p>
-        Additionally, it's just better at compression in general. While WebP can
-        compress images to <a
-          href="https://developers.google.com/speed/webp/docs/webp_study#webp_size_comparison"
-          target="_blank"
-          rel="noreferrer">25-34% smaller sizes</a
-        > than an equivalent JPEG, JPEG XL promises a <a
-          href="https://jpeg.org/downloads/jpegxl/jpegxl-cfp.pdf"
-          >60% reduction</a
-        > in filesize, while preserving JPEG-tier quality.
-      </p>
-      <p>So if JPEG XL is so great, why isn't it more popular?</p>
+    <section
+      class="border-b-4 border-black bg-purple-700 w-screen -mx-8 px-8 py-12"
+    >
+      <div class="max-w-[1200px] mx-auto">
+        <div
+          class="relative bg-black w-full rotate-1 py-2 px-8 before:absolute before:content-[''] before:w-[8px] before:h-full before:-left-[4px] before:top-0 before:bg-[linear-gradient(45deg,transparent_25%,black_25%,black_75%,transparent_75%)] before:bg-[length:8px_8px] after:absolute after:content-[''] after:w-[8px] after:h-full after:-right-[4px] after:top-0 after:bg-[linear-gradient(-45deg,transparent_25%,black_25%,black_75%,transparent_75%)] after:bg-[length:8px_8px]"
+        >
+          <h3 class="text-white">Crafting a Better JPEG</h3>
+        </div>
+        <p class="mt-8">
+          As you would imagine, many algorithms have come out that have
+          threatened to dethrone JPEGs dominance in the internet zeitgeist.
+        </p>
+        <p>
+          Pioneered by Apple, the HEIC format is one of the most popular
+          alternatives, in large part due to the market share they have nabbed
+          with the iPhone. WebP is another standard that has arisen, supported
+          by Google. It has seen widespread adoption since 2020, and is a great
+          option for developers who want to keep their web applications trim and
+          efficient.
+        </p>
+        <p>
+          But these formats have historically suffered from a lack of support in
+          a variety of apps. HEIC is very expensive to license,<a
+            href="https://web.archive.org/web/20190406173933/https://www.hevcadvance.com/pdfnew/RoyaltyRatesSummary.pdf"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[12]</sup></a
+          > so Apple is really the only company that can reasonably support it. Additionally,
+          while WebP support is growing in browsers, it is less useful as a generalized
+          file format since it won't open natively in Windows and MacOS. Ultimately,
+          JPEGs cultural dominance is exactly what makes it so irreplaceable.
+        </p>
+        <p>
+          JPEG XL is the first new format to challenge JPEG's dominance in
+          decades. While JPEG has seen incremental updates in JPEG 2000 and JPEG
+          XR, JPEG XL is the first new format to pose a legitimate challenge to
+          JPEG's dominance in decades.
+        </p>
+        <p>
+          JPEG XL can do a lot. It can re-encode existing JPEG images, reducing
+          their file size without re-introducing artifacts.<a
+            href="https://github.com/libjxl/libjxl/issues/895#issuecomment-991148244"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[6]</sup></a
+          > As such, it is the only new file format that remains backwards compatible
+          with the preexisting JPEG format. And it's completely royalty-free despite
+          these fancy re-encoding schemes. Pretty cool!
+        </p>
+        <div class="relative md:float-left md:w-3/8 md:mr-4 mb-4">
+          <Image
+            class="max-md:mx-auto"
+            src={progressive}
+            alt={""}
+            width={500}
+          />
+        </div>
+        <p>
+          It also supports native Progressive Decoding, which allows for the
+          image to be displayed before it is fully decoded. Traditionally,
+          images are loaded in from top-to-bottom, rendering the rows of pixels
+          one at a time. With progressive decoding, images will load at a set of
+          "tiers", each being a progressively more detailed version of the
+          image. Additionally, machine learning is used to prioritize important
+          elements of a given image, like faces or areas that are in sharp focus
+          relative to the rest of the image.
+        </p>
+        <p>
+          Additionally, it's just better at compression in general. While WebP
+          can compress images to 25-34% smaller size<a
+            href="https://developers.google.com/speed/webp/docs/webp_study#webp_size_comparison"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[13]</sup></a
+          > than an equivalent JPEG, JPEG XL promises a 60% reduction<a
+            href="https://jpeg.org/downloads/jpegxl/jpegxl-cfp.pdf"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[5]</sup></a
+          > in filesize, while preserving JPEG-tier quality.
+        </p>
+        <p class="mt-2">
+          So... if JPEG XL is so great, why isn't it more popular?
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h3>Google.</h3>
-      <p>
-        The boogeyman is back. Google has been the biggest obstacle to JPEG XL's
-        adoption due to its monopoly on the browser market.
-      </p>
-      <p>
-        Google has been a major driver of the web, and its browser, Chrome, is
-        the most popular browser in the world. If Google doesn't support a
-        format, then it doesn't stand a chance.
-      </p>
-      <p>
-        Google has been vocal about its support for its new standard, AVIF. It
-        is the image component of their new video codec that they are devising
-        to improve compression ratios on YouTube, AV1. As such, Google has a
-        vested interest in AVIF's success.
-      </p>
-      <p>
-        And AVIF is not bad by any means. It's a great format. It can support
-        4096 shades of colors per color channel, 65536 x 65536 images, is
-        royalty-free, can handle transparency, and has a host of other features
-        that make it a great option. However, JPEG XL is just more future-proof.
-        It can support 4 billion shades of each color, and can support pixel
-        dimensions up to a billion pixels of width and height. If AVIF is a gun,
-        JPEG XL is a rocket launcher.
-      </p>
-      <p>
-        So Google's technological politics serve as a bulwark to JPEG XL's
-        success. They dropped support for JPEG XL in Chrome back in 2023, due to
-        "security implications", and Mozilla (a company funded by Google)
-        chooses to remain "neutral" on the issue by only enabling it in its
-        nightly builds.
-      </p>
-      <p>
-        The only browser that supports JPEG XL is Safari. And while it's great
-        that Apple is supporting the format, Safari doesn't have the market
-        share for web developers to justify using it, especially when
-        Google-sponsored formats like WebP and AVIF seem to do the job well
-        enough.
-      </p>
-      <p>
-        It's quite a shame. JPEG XL is a great format that has the potential to
-        completely dethrone JPEG as the universal image format. But until Google
-        and Mozilla change their tune, JPEG XL will remain a niche format,
-        relegated to living in the shadow of AVIF.
-      </p>
+    <section
+      class="border-b-4 border-black bg-teal-700 w-screen -mx-8 px-8 py-12"
+    >
+      <div class="max-w-[1200px] mx-auto">
+        <div
+          class="relative bg-black w-full -rotate-1 py-2 px-8 before:absolute before:content-[''] before:w-[8px] before:h-full before:-left-[4px] before:top-0 before:bg-[linear-gradient(45deg,transparent_25%,black_25%,black_75%,transparent_75%)] before:bg-[length:8px_8px] after:absolute after:content-[''] after:w-[8px] after:h-full after:-right-[4px] after:top-0 after:bg-[linear-gradient(-45deg,transparent_25%,black_25%,black_75%,transparent_75%)] after:bg-[length:8px_8px]"
+        >
+          <h3 class="text-white">Google.</h3>
+        </div>
+        <p class="mt-10">
+          The boogeyman is back. Google has been the biggest obstacle to JPEG
+          XL's adoption due to its monopoly on the browser market.
+        </p>
+        <p>
+          Google has been a major driver of the web, and its browser, Chrome, is
+          the most popular browser in the world. If Google doesn't support a
+          format, then it doesn't stand a chance.
+        </p>
+        <p>
+          Google has been vocal about its support for its new standard, AVIF. It
+          is the image component of their new video codec that they are devising
+          to improve compression ratios on YouTube, AV1. As such, Google has a
+          vested interest in AVIF's success.
+        </p>
+        <div
+          class="max-md:hidden relative md:float-right md:w-1/2 md:ml-4 mb-4"
+        >
+          <Image class="max-md:mx-auto" src={caniusejxl} alt={""} width={500} />
+        </div>
+
+        <p>
+          And AVIF is not bad by any means. It's a great format. It can support
+          4096 shades of colors per color channel, 8192 x 4352 images, is
+          royalty-free, can handle transparency, and has a host of other
+          features that make it a great option.<a
+            href="https://aomediacodec.github.io/av1-avif/"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[1]</sup></a
+          > However, JPEG XL is just more future-proof. It can support 4 billion
+          shades of each color, and can support pixel dimensions up to a billion
+          pixels of width and height.<a
+            href="https://cloudinary.com/blog/how_jpeg_xl_compares_to_other_image_codecs"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[3]</sup></a
+          > If AVIF is a gun, JPEG XL is a rocket launcher.
+        </p>
+
+        <p>
+          So Google's technological politics serve as a bulwark to JPEG XL's
+          success. They dropped support for JPEG XL in Chrome back in 2023 due
+          to a lack of "sufficient incremental benefits",<a
+            href="https://www.phoronix.com/news/Chrome-Dropping-JPEG-XL-Reasons"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[2]</sup></a
+          > and Mozilla (a company funded by Google) chooses to remain "neutral"
+          on the issue by only enabling it in its nightly builds.<a
+            href="https://www.phoronix.com/news/Mozilla-Neutral-On-JPEG-XL"
+            target="_blank"
+            rel="noreferrer"><sup class="mx-px">[9]</sup></a
+          >
+        </p>
+        <div class="md:hidden relative md:float-right md:w-1/2 md:ml-4 mb-4">
+          <Image class="max-md:mx-auto" src={caniusejxl} alt={""} width={500} />
+        </div>
+        <p>
+          The only browser that supports JPEG XL is Safari. And while it's great
+          that Apple is supporting the format, Safari doesn't have the market
+          share for web developers to justify using it, especially when
+          Google-sponsored formats like WebP and AVIF seem to do the job well
+          enough.
+        </p>
+        <p>
+          It's quite a shame. JPEG XL is a great format that has the potential
+          to completely dethrone JPEG as the universal image format. But until
+          Google and Mozilla change their tune, JPEG XL will remain a niche
+          format, relegated to living in the shadow of AVIF.
+        </p>
+        <Footer />
+      </div>
     </section>
-    <Footer />
   </main>
 </Layout>
