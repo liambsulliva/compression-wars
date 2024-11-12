@@ -1,15 +1,15 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import deno from "@astrojs/deno";
 import tailwind from "@astrojs/tailwind";
 import { imagetools } from "vite-imagetools";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
   output: "server",
-  adapter: deno(),
   vite: {
     plugins: [imagetools()],
   },
+  adapter: vercel(),
 });
