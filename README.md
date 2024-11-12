@@ -1,21 +1,49 @@
-# Compression Wars: JPEG XL
+# Compression Wars
 
-Welcome to **Compression Wars**, a project dedicated to exploring and advocating for the adoption of JPEG XL, the forgotten king of image compression formats. This project is built using [Astro](https://astro.build/) and leverages a neubrutalist design aesthetic to deliver a unique and engaging user experience.
+An academic exploration of JPEG XL and the politics of image compression, presented as a neubrutalist blog. Created for ENGFLM 0570 - Introduction to New Media, taught by Dr. Nathan Koob.
 
-## Project Overview
+## Overview
 
-JPEG XL is a next-generation image format that offers superior compression and quality compared to traditional formats like JPEG and PNG. Despite its advantages, JPEG XL has not yet seen widespread adoption. This project aims to highlight its benefits and encourage its use in modern web applications.
+This project examines JPEG XL through both technical and sociopolitical lenses, investigating why this next-generation image format—despite its superior compression and quality—faces adoption challenges in the modern web ecosystem. The analysis is presented through a neubrutalist design that emphasizes content clarity and visual hierarchy.
+
+## Key Topics
+
+- Technical deep-dive into JPEG XL's compression capabilities
+- Comparative analysis with contemporary formats (HEIC, WebP, AVIF)
+- Browser politics and market dynamics affecting adoption
+- Interactive compression demonstrations
+- Historical context of image compression standards
+- Progressive loading implementations
 
 ## Design Philosophy
 
-The project employs a neubrutalist design, characterized by bold colors, stark contrasts, and a raw, unpolished aesthetic. This design choice reflects the project's mission to challenge the status quo and promote a new standard in image compression.
+The project embraces neubrutalist web design principles:
+
+- High-contrast typography using `Clash Display` and `Montserrat`
+- Minimalist layout with strong visual hierarchy
+- Raw, functional aesthetic
+- Focus on content readability
+- Mobile-responsive design
 
 ## Tech Stack
 
-- **Astro**: A modern static site generator that allows for the seamless integration of various front-end frameworks.
-- **Deno**: A secure runtime for JavaScript and TypeScript, used for server-side rendering and deployment.
-- **Tailwind CSS**: A utility-first CSS framework that enables rapid UI development.
+- **Framework**: [Astro](https://astro.build/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Typography**: Montserrat, Clash Display
+- **Deployment**: Vercel
+- **Image Processing**: vite-imagetools (to preserve .JXL)
 
-## Installation
+## Development
 
-To get started with the project, clone the repository and install the dependencies:
+To run locally...
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
